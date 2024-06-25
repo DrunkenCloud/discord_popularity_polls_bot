@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Review</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .details {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+        .accept-button {
+            background-color: green;
+        }
+        .reject-button {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Character Review</h1>
+    <img src="{{ image_link }}" alt="Image for {{ current_element }}">
+    <div class="details">
+        <p><strong>Character Name:</strong> {{ character_name }}</p>
+        <p><strong>Source:</strong> {{ source }}</p>
+    </div>
+    <form method="post" action="/action">
+        <div class="button-container">
+            <button type="submit" name="action" value="accept" class="accept-button">Accept</button>
+            <button type="submit" name="action" value="reject" class="reject-button">Reject</button>
+        </div>
+    </form>
+</body>
+</html>
